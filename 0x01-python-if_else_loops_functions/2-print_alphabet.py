@@ -1,5 +1,5 @@
 #!/usr/bin/python3
 """Print the ascii alphabet in lowercase, not followed by a new line."""
 
-for letter in range(97, 123):
-	print(f"{chr(letter)}", end="")
+for a in "abcdefghijklmnopqrstuvwxyz":
+    print(f"{a}", end='')
