@@ -1,8 +1,10 @@
 #!/usr/bin/python3
+
 """square class"""
 
 
 class Square:
+    """represent class squre"""
 
     def __init__(self, size=0, position=(0, 0)):
         self.size = size
