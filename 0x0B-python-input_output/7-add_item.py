@@ -11,7 +11,7 @@ load_json = __import__('6-load_from_json_file').load_from_json_file
 
 try:
     j_list = load_json("add_item.json")
-except:
+except Exception:
     j_list = []
 
 for i in sys.argv[1:]:
