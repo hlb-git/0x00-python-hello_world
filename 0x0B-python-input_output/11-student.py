@@ -12,3 +12,7 @@ class Student:
     def to_json(self):
         """return dict detail of the class"""
         return (self.__dict__)
+
+    def reload_from_json(self, json):
+        if (json):
+            self.__dict__ = json
