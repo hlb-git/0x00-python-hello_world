@@ -11,26 +11,26 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
-        if id != None:
+        if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-    
+
     @staticmethod
     def to_json_string(list_dictionaries):
         if not list_dictionaries:
             return "[]"
         return json.dumps(list_dictionaries)
-    
+
     @classmethod
     def save_to_file(cls, list_objs):
         with open(cls.__name__ + '.json', mode="w", encoding="UTF-8") as file:
             if not list_objs:
                 file.write('[]')
             else:
-                    data = cls.to_json_string([i.to_dictionary() for i in list_objs])
-                    file.write(data)
+                data = cls.to_json_string([i.to_dictionary() for i in list_objs])
+                file.write(data)
 
     @staticmethod
     def from_json_string(json_string):
@@ -46,7 +46,7 @@ class Base:
         if dummy_instance:
             dummy_instance = (dummy_instance.update(**dictionary))
             return dummy_instance
-        
+
     @classmethod
     def save_to_file_csv(cls, list_objs):
         import csv
