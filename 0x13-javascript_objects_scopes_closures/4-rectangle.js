@@ -8,9 +8,10 @@ class Rectangle {
   }
 
   print () {
-    while (this.height) {
+    let i = this.height;
+    while (i) {
       console.log('X'.repeat(this.width));
-      this.height--;
+      i--;
     }
   }
 
