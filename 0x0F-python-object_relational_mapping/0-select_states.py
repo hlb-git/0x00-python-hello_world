@@ -1,0 +1,22 @@
+#!/usr/bin/python3
+"""selects rows in a table"""
+
+if __name__ == "__main__":
+    import MySQLdb
+    import sys
+
+    args = sys.argv
+    if (len(args) != 4):
+        raise Exception('need 3 arguments')
+
+    conn = MySQLdb.connect(host="localhost",
+                           port=3306,
+                           user=args[1],
+                           passwd=args[2],
+                           db=args[3])
+
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    results = cur.fetchall()
+    for row in results:
+        print(row)
