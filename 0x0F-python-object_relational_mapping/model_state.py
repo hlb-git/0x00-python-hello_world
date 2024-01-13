@@ -21,5 +21,3 @@ class State(Base):
 
     def __init__(self, name):
         self.name = name
-
-
