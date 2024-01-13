@@ -23,8 +23,3 @@ class State(Base):
         self.name = name
 
 
-mysql_str = 'mysql+mysqldb://{}:{}@localhost:3306/{}'
-engine = create_engine(mysql_str.format(sys.argv[1],
-                       sys.argv[2], sys.argv[3]), pool_pre_ping=True)
-
-Base.metadata.create_all(bind=engine)
