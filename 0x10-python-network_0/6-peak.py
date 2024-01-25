@@ -3,6 +3,7 @@
 
 
 def search(low, high, ints):
+    """find the max"""
     mid = (low + high) // 2
     if low == high:
         return ints[high]
@@ -12,6 +13,7 @@ def search(low, high, ints):
 
 
 def find_peak(list_of_integers):
+    """bigger function to call search"""
     if not list_of_integers:
         return
     return (search(0, len(list_of_integers) - 1, list_of_integers))
