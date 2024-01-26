@@ -11,7 +11,7 @@ if __name__ == "__main__":
     headers = {'Authentication': password}
 
     response = requests.get("https://api.github.com/users/{}".format(username),
-                             headers=headers)
+                            headers=headers)
     if response.status_code == 200:
         id = response.json().get('id')
         print(id)
