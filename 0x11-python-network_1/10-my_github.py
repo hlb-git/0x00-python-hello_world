@@ -8,7 +8,7 @@ if __name__ == "__main__":
 
     username = sys.argv[1]
     password = sys.argv[2]
-    headers = {'Authentication': password}
+    headers = {'Authentication': 'Bearer' + password}
 
     response = requests.get("https://api.github.com/users/{}".format(username),
                             headers=headers)
